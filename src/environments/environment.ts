@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  domain:"localhost:8080",
+  urlServiceV1: "http://localhost:8080/api/v1",
+  oAuthAutentication: "http://localhost:8080",
+  clientId:"angular",
+  clientSecret: "angul@r"
 };
 
 /*

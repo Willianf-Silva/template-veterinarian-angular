@@ -1,0 +1,72 @@
+<!-- Footer -->
+<footer class="footer spad bg-dark" *ngIf="mostrarFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <!-- Logo -->
+                <div class="footer__about">
+                    <div class="footer__about__logo">
+                        <a [routerLink]="['/home']"> <img src="/assets/logo.png" width="200" height="140" alt="WNFA"></a>
+                    </div>
+                </div>
+                 <!-- Logo -->
+
+                 <!-- Social buttons -->
+                <div class="footer__widget">
+                    <div class="footer__widget__social">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/?lang=pt" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <!-- Social buttons -->
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <!-- Acesso Rapido -->
+                <div class="footer__widget">
+                    <h6>Acesso Rápido</h6>
+                    <ul>
+                        <li><a [routerLink]="['/sobre']">Link 1</a></li>
+                        <li><a [routerLink]="['/usuário']">Link 2</a></li>
+                        <li><a [routerLink]="['/novousuario']">Link 3</a></li>
+                        <li><a [routerLink]="['/produto']">Link 4</a></li>
+                    </ul>
+                    <ul>
+                        <li><a [routerLink]="['/favoritos']">Link 5</a></li>
+                        <li><a [routerLink]="['/contato']">Link 6</a></li>
+                        <li><a [routerLink]="['/favoritos']">Link 7</a></li>
+                        <li><a [routerLink]="['/contato']">Link 8</a></li>
+                    </ul>
+                </div>
+                 <!-- Acesso Rapido -->
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                 <!-- Informações -->
+                <div class="footer__widget">
+                    <h6>Lorem ipsum dolor sit amet consectetur elit</h6>
+                    <p>Praesent lacinia dui risus, eget elementum magna eleifend quis. Donec sit amet enim rhoncus, aliquet nisl sit amet, faucibus ante. Ut euismod ornare felis vitae laoreet. Aliquam vel suscipit ante, nec malesuada arcu.</p>
+                    <p>Vivamus varius, est sed convallis commodo, est nulla malesuada diam, vel ultricies orci est a magna. Ut sed arcu commodo, semper orci sed, cursus nunc. Phasellus quis orci nec justo interdum efficitur.</p>
+                </div>
+                 <!-- Informacões -->
+            </div>
+        </div>
+    </div>
+   
+    <!-- Copyright -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="footer__copyright">
+                <div class="footer__copyright__text">
+                    <p> Desenvolvido para fins de estudos por 
+                        <a href="https://github.com/Willianf-Silva" target="_blank"> Willian Silva</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>

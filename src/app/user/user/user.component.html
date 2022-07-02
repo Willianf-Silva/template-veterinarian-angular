@@ -1,0 +1,9 @@
+<p>user works!</p>
+
+<app-form *ngIf="usuarioLogado$ | async as usuarioLogado; else loading" [usuarioLogado]="usuarioLogado$"></app-form>
+
+<ng-template #loading>
+    <div *ngIf="loading$ | async">
+        Loading ...
+    </div>
+</ng-template>

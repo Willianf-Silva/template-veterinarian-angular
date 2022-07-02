@@ -1,0 +1,64 @@
+<div class="container main-container">
+    <h4>Usuário</h4>
+    <hr />
+    <form novalidate (ngSubmit)="adicionarAlterarUsuario()" [formGroup]="cadastroForm">
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="name" type="text" placeholder="Nome" formControlName="name"
+                    [ngClass]="{'is-invalid': displayMessage.name}"/>
+                    <span class="text-danger" *ngIf="displayMessage.name">
+                        <p [innerHTML]="displayMessage.name"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="email" type="text" placeholder="E-mail" formControlName="email"
+                    [ngClass]="{'is-invalid': displayMessage.email}"/>
+                    <span class="text-danger" *ngIf="displayMessage.email">
+                        <p [innerHTML]="displayMessage.email"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="usuario" type="text" placeholder="Usuário" formControlName="usuario"
+                    [ngClass]="{'is-invalid': displayMessage.usuario}"/>
+                    <span class="text-danger" *ngIf="displayMessage.usuario">
+                        <p [innerHTML]="displayMessage.usuario"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="senha" type="password" placeholder="Senha" formControlName="senha"
+                        [ngClass]="{'is-invalid': displayMessage.senha}"/>
+                    <span class="text-danger" *ngIf="displayMessage.senha">
+                        <p [innerHTML]="displayMessage.senha"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="senhaConfirmacao" type="password" placeholder="Confirme a Senha" formControlName="senhaConfirmacao"
+                    [ngClass]="{'is-invalid': displayMessage.senhaConfirmacao}"/>
+                    <span class="text-danger" *ngIf="displayMessage.senhaConfirmacao">
+                        <p [innerHTML]="displayMessage.senhaConfirmacao"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <span><button class="btn btn-success" id="Registrar" [disabled]="!cadastroForm.valid" type="submit">Salvar</button></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
