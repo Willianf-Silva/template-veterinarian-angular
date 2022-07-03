@@ -3,10 +3,10 @@ import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/shared/generic-form-validation';
-import { UserRequestDTO } from 'src/app/model/UserRequestDTO';
 import { VeterinarianResponseDTO } from 'src/app/model/dto/response/VeterinarianResponseDTO';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { UserService } from '../../user.service';
+import { VeterinarianRequestDTO } from 'src/app/model/dto/request/VeterinarianRequestDTO';
 
 @Component({
   selector: 'app-form',
@@ -16,7 +16,7 @@ import { UserService } from '../../user.service';
 export class FormComponent implements OnInit, AfterViewInit {
 
   cadastroForm: FormGroup;
-  usuario: UserRequestDTO;
+  usuario: VeterinarianRequestDTO;
   validationMessages: ValidationMessages;
   genericValidator: GenericValidator;
   displayMessage: DisplayMessage = {};

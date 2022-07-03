@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { environment } from 'src/environments/environment';
-import { UserRequestDTO } from '../model/UserRequestDTO';
+import { VeterinarianRequestDTO } from "../model/dto/request/VeterinarianRequestDTO";
 import { VeterinarianResponseDTO } from "../model/dto/response/VeterinarianResponseDTO";
 import { AuthenticationService } from "../security/authentication.service";
 import { AlertModalService } from "../shared/alert-modal.service";
@@ -21,7 +21,7 @@ export class UserService {
     private alertService: AlertModalService
   ) { }
 
-  createUpdate(idUsuario: number, usuario: UserRequestDTO): Observable<any> {
+  createUpdate(idUsuario: number, usuario: VeterinarianRequestDTO): Observable<any> {
     if (idUsuario === null) {
       const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
