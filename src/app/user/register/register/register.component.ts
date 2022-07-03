@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserResponseDTO } from 'src/app/model/UserResponseDTO';
+import { VeterinarianResponseDTO } from 'src/app/model/dto/response/VeterinarianResponseDTO';
 
 @Component({
   selector: 'app-register',
@@ -8,9 +8,9 @@ import { UserResponseDTO } from 'src/app/model/UserResponseDTO';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  usuarioLogado: Observable<UserResponseDTO>;
+  usuarioLogado: Observable<VeterinarianResponseDTO>;
 
   ngOnInit(): void {
-    this.usuarioLogado = new Observable<UserResponseDTO>();
+    this.usuarioLogado = new Observable<VeterinarianResponseDTO>();
   }
 }

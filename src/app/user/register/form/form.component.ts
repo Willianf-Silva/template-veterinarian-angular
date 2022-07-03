@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/shared/generic-form-validation';
 import { UserRequestDTO } from 'src/app/model/UserRequestDTO';
-import { UserResponseDTO } from 'src/app/model/UserResponseDTO';
+import { VeterinarianResponseDTO } from 'src/app/model/dto/response/VeterinarianResponseDTO';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { UserService } from '../../user.service';
 
@@ -22,7 +22,7 @@ export class FormComponent implements OnInit, AfterViewInit {
   displayMessage: DisplayMessage = {};
 
   @Input()
-  usuarioLogado: Observable<UserResponseDTO>;
+  usuarioLogado: Observable<VeterinarianResponseDTO>;
 
   //Obtendo uma lista com os elementos do formulário
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
@@ -89,7 +89,7 @@ export class FormComponent implements OnInit, AfterViewInit {
     this.usuarioLogado.subscribe(
       data => {
         this.cadastroForm.setValue({
-          name: data.name,
+          name: data.firstName,
           email: data.email,
           usuario: data.username,
           senha: '',

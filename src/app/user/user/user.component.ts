@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, EMPTY, Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { UserResponseDTO } from 'src/app/model/UserResponseDTO';
+import { VeterinarianResponseDTO } from 'src/app/model/dto/response/VeterinarianResponseDTO';
 import { UserService } from '../user.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
 
-  usuarioLogado$: Observable<UserResponseDTO>;
+  usuarioLogado$: Observable<VeterinarianResponseDTO>;
   loading$ = new BehaviorSubject<boolean>(true);
 
   constructor(

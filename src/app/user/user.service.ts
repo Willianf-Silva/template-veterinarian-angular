@@ -4,7 +4,7 @@ import { EMPTY, Observable } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { environment } from 'src/environments/environment';
 import { UserRequestDTO } from '../model/UserRequestDTO';
-import { UserResponseDTO } from "../model/UserResponseDTO";
+import { VeterinarianResponseDTO } from "../model/dto/response/VeterinarianResponseDTO";
 import { AuthenticationService } from "../security/authentication.service";
 import { AlertModalService } from "../shared/alert-modal.service";
 import { mensagemErro, retryWithDelay } from "../shared/utils";
@@ -13,7 +13,7 @@ import { mensagemErro, retryWithDelay } from "../shared/utils";
   providedIn: 'root'
 })
 export class UserService {
-  protected urlServiceV1: string = `${environment.urlServiceV1}/users`;
+  protected urlServiceV1: string = `${environment.urlServiceV1}/veterinarians`;
 
   constructor(
     public http: HttpClient,
@@ -45,7 +45,7 @@ export class UserService {
     }
   };
 
-  obterUsuarioLogado(): Observable<UserResponseDTO> {
+  obterUsuarioLogado(): Observable<VeterinarianResponseDTO> {
     const username: string = this.authenticationService.getPayload()?.user_name;
     return this.http.get<any>(this.urlServiceV1 + "/login/" + username)
       .pipe(retryWithDelay(1000,3),
