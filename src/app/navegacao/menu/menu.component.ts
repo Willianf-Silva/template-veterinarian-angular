@@ -26,19 +26,31 @@ export class MenuComponent implements OnInit {
     },
     {
       link: '/usuarios',
-      name: 'Usuários',
+      name: 'Usuário',
       exact: true,
       admin: false
     },
     {
-      link: '/fotos',
-      name: 'Fotos',
+      link: '/clientes',
+      name: 'Cliente',
       exact: true,
       admin: false
     },
     {
-      link: '/produtos',
-      name: 'Produtos',
+      link: '/servicos',
+      name: 'Serviço',
+      exact: true,
+      admin: false
+    },
+    {
+      link: '/consultas',
+      name: 'Consulta',
+      exact: true,
+      admin: false
+    },
+    {
+      link: '/agendas',
+      name: 'Agenda',
       exact: true,
       admin: false
     }
