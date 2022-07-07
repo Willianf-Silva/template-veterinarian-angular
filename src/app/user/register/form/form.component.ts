@@ -80,6 +80,7 @@ export class FormComponent implements OnInit, AfterViewInit {
       firstName: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
       lastName: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
       cpf: ['',[Validators.required, Validators.minLength(14), Validators.maxLength(14)]],
+      dataNascimento: ['',[Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       situacao: ['', [Validators.required]],
       crmv: ['', [Validators.minLength(1), Validators.maxLength(15)]],
@@ -97,6 +98,7 @@ export class FormComponent implements OnInit, AfterViewInit {
           firstName: data.firstName,
           lastName: data.lastName,
           cpf: data.cpf,
+          dataNascimento: data.birthDate,
           email: data.email,
           situacao: data.situation,
           crmv: data.crmv,
@@ -128,6 +130,9 @@ export class FormComponent implements OnInit, AfterViewInit {
         required: 'CPF é obrigatório',
         minlength: 'O CPF precisa ter no mínimo 11 caracteres (Somente números)',
         maxlength: 'O CPF precisa ter no máximo 11 caracteres (Somente números)'
+      },
+      dataNascimento: {
+        required: 'Data de nascimento é obrigatório'
       },
       email: {
         required: 'E-mail é obrigatório',

@@ -36,6 +36,16 @@
 
             <div class="form-group">
                 <div class="col-md-10">
+                    <input class="form-control" id="dataNascimento" type="text" placeholder="Data de Nascimento" formControlName="dataNascimento"
+                    [ngClass]="{'is-invalid': displayMessage.dataNascimento}"/>
+                    <span class="text-danger" *ngIf="displayMessage.dataNascimento">
+                        <p [innerHTML]="displayMessage.dataNascimento"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
                     <input class="form-control" id="email" type="text" placeholder="E-mail" formControlName="email"
                     [ngClass]="{'is-invalid': displayMessage.email}"/>
                     <span class="text-danger" *ngIf="displayMessage.email">
