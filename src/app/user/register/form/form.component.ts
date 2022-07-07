@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/shared/generic-form-validation';
-import { VeterinarianResponseDTO } from 'src/app/model/dto/response/VeterinarianResponseDTO';
+import { RoleResponseDTO, VeterinarianResponseDTO } from 'src/app/model/dto/response/VeterinarianResponseDTO';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { UserService } from '../../user.service';
 import { VeterinarianRequestDTO } from 'src/app/model/dto/request/VeterinarianRequestDTO';
@@ -77,9 +77,14 @@ export class FormComponent implements OnInit, AfterViewInit {
     Validators.minLength(6), Validators.maxLength(15)]);
 
     this.cadastroForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
+      firstName: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
+      lastName: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
+      cpf: ['',[Validators.required, Validators.minLength(14), Validators.maxLength(14)]],
       email: ['', [Validators.required, Validators.email]],
+      situacao: ['', [Validators.required]],
+      crmv: ['', [Validators.minLength(1), Validators.maxLength(15)]],
       usuario: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
+      roles: ['', [Validators.required]],
       senha: senha,
       senhaConfirmacao: senhaConfirm
     });
@@ -89,9 +94,14 @@ export class FormComponent implements OnInit, AfterViewInit {
     this.usuarioLogado.subscribe(
       data => {
         this.cadastroForm.setValue({
-          name: data.firstName,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          cpf: data.cpf,
           email: data.email,
+          situacao: data.situation,
+          crmv: data.crmv,
           usuario: data.username,
+          roles: obterRolesName(data.roles),
           senha: '',
           senhaConfirmacao: '',
         });
@@ -104,19 +114,39 @@ export class FormComponent implements OnInit, AfterViewInit {
 
   private construirMensagemValidacao() {
     this.validationMessages = {
-      name: {
+      firstName: {
         required: 'Nome é obrigatório',
         minlength: 'O nome precisa ter no mínimo 6 caracteres',
         maxlength: 'O nome precisa ter no máximo 15 caracteres'
+      },
+      lastName: {
+        required: 'Sobrenome é obrigatório',
+        minlength: 'O sobrenome precisa ter no mínimo 1 caracteres',
+        maxlength: 'O sobrenome precisa ter no máximo 30 caracteres'
+      },
+      cpf: {
+        required: 'CPF é obrigatório',
+        minlength: 'O CPF precisa ter no mínimo 11 caracteres (Somente números)',
+        maxlength: 'O CPF precisa ter no máximo 11 caracteres (Somente números)'
       },
       email: {
         required: 'E-mail é obrigatório',
         email: 'E-mail inválido'
       },
+      situacao: {
+        required: 'Situação é obrigatório'
+      },
+      crmv: {
+        minlength: 'O CRMV precisa ter no mínimo 1 caracteres',
+        maxlength: 'O CRMV precisa ter no máximo 15 caracteres'
+      },
       usuario: {
         required: 'Usuário é obrigatório',
         minlength: 'O usuário precisa ter no mínimo 6 caracteres',
         maxlength: 'O usuário precisa ter no máximo 15 caracteres'
+      },
+      roles: {
+        required: 'Role é obrigatório'
       },
       senha: {
         required: 'Senha é obrigatório',
@@ -139,4 +169,12 @@ export class FormComponent implements OnInit, AfterViewInit {
       this.displayMessage = this.genericValidator.processarMensagens(this.cadastroForm);
     });
   }
+}
+
+function obterRolesName(roles: Set<RoleResponseDTO>): String[] {
+  let rolesName: Array<String> = []
+  roles.forEach((item) => {
+    rolesName.push(item.roleName)
+  })
+  return rolesName;
 }

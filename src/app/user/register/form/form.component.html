@@ -6,10 +6,30 @@
 
             <div class="form-group">
                 <div class="col-md-10">
-                    <input class="form-control" id="name" type="text" placeholder="Nome" formControlName="name"
-                    [ngClass]="{'is-invalid': displayMessage.name}"/>
-                    <span class="text-danger" *ngIf="displayMessage.name">
-                        <p [innerHTML]="displayMessage.name"></p>
+                    <input class="form-control" id="firstName" type="text" placeholder="Nome" formControlName="firstName"
+                    [ngClass]="{'is-invalid': displayMessage.firstName}"/>
+                    <span class="text-danger" *ngIf="displayMessage.firstName">
+                        <p [innerHTML]="displayMessage.firstName"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="lastName" type="text" placeholder="Sobrenome" formControlName="lastName"
+                    [ngClass]="{'is-invalid': displayMessage.lastName}"/>
+                    <span class="text-danger" *ngIf="displayMessage.lastName">
+                        <p [innerHTML]="displayMessage.lastName"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="cpf" type="text" placeholder="CPF" formControlName="cpf"
+                    [ngClass]="{'is-invalid': displayMessage.cpf}"/>
+                    <span class="text-danger" *ngIf="displayMessage.cpf">
+                        <p [innerHTML]="displayMessage.cpf"></p>
                     </span>
                 </div>
             </div>
@@ -26,10 +46,40 @@
 
             <div class="form-group">
                 <div class="col-md-10">
+                    <input class="form-control" id="situacao" type="text" placeholder="Situação" formControlName="situacao"
+                    [ngClass]="{'is-invalid': displayMessage.situacao}"/>
+                    <span class="text-danger" *ngIf="displayMessage.situacao">
+                        <p [innerHTML]="displayMessage.situacao"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="crmv" type="text" placeholder="CRMV" formControlName="crmv"
+                    [ngClass]="{'is-invalid': displayMessage.crmv}"/>
+                    <span class="text-danger" *ngIf="displayMessage.crmv">
+                        <p [innerHTML]="displayMessage.crmv"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
                     <input class="form-control" id="usuario" type="text" placeholder="Usuário" formControlName="usuario"
                     [ngClass]="{'is-invalid': displayMessage.usuario}"/>
                     <span class="text-danger" *ngIf="displayMessage.usuario">
                         <p [innerHTML]="displayMessage.usuario"></p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" id="roles" type="text" placeholder="Roles" formControlName="roles"
+                    [ngClass]="{'is-invalid': displayMessage.roles}"/>
+                    <span class="text-danger" *ngIf="displayMessage.roles">
+                        <p [innerHTML]="displayMessage.roles"></p>
                     </span>
                 </div>
             </div>
